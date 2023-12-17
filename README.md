@@ -1,4 +1,4 @@
-# Project Name
+# CRUX - Assignment 1
 
 This is an assignment for crux.
 
