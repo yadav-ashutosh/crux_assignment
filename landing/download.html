@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            color: #007bff; /* Blue color */
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745; /* Green color */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #218838; /* Darker green color on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Crux Assignment</h1>
+    <p>Please download the file now</p>
+    <a href="{% url 'your_download_view_name' %}">Download</a>
+</body>
+</html>

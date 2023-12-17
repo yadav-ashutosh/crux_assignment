@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            color: #007bff; /* Blue color */
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #file-name {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #777;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #28a745; /* Green color */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crux Assignment</h1>
+    <p>Get semantic column names</p>
+
+    <form action="upload/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file">Choose Excel File</label>
+        <input type="file" id="file" name="file" onchange="displayFileName()">
+        <p id="file-name"></p>
+        <button type="submit">Upload Excel</button>
+    </form>
+
+    <script>
+        function displayFileName() {
+            const fileInput = document.getElementById('file');
+            const fileNameDisplay = document.getElementById('file-name');
+
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = `Selected file: ${fileInput.files[0].name}`;
+            } else {
+                fileNameDisplay.textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>
